@@ -7,8 +7,8 @@
   },
   "properties": {
     "id": {
-      "id": true,
       "type": "number",
+      "id": true,
       "required": true
     },
     "title": {
@@ -22,6 +22,14 @@
   },
   "validations": [],
   "relations": {},
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "propert": "postNewTask"
+    }
+  ],
   "methods": {}
 }
