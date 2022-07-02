@@ -1,12 +1,13 @@
 /* eslint-disable */
 const button = document.querySelector(".buttonAd");
-const inputTitle = document.querySelector("#title").value;
+const inputTitle = document.querySelector("#title");
 
 const submitNewTask = (e) => {
   e.preventDefault();
   let id = Number(Math.round(Math.random() * 10000000));
   const isDone = false;
-  const title = inputTitle;
+  let title = inputTitle.value;
+
   fetch("http://localhost:3000/api/todoLists/postNewTask", {
     method: "POST",
     headers: {
@@ -21,6 +22,7 @@ const submitNewTask = (e) => {
     .catch((err) => {
       console.error(err);
     });
+  inputTitle.value = "";
 };
 
 button.addEventListener("click", submitNewTask);
