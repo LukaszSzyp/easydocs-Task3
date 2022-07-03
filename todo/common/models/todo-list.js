@@ -31,4 +31,8 @@ module.exports = function (Todolist) {
       verb: "post",
     },
   });
+
+  Todolist.postNewTask2 = function (id, title, isDone) {
+    Todolist.create({ id: id, title: title, isDone: isDone });
+  };
 };

@@ -31,5 +31,39 @@
       "propert": "postNewTask"
     }
   ],
-  "methods": {}
+  "methods": {
+    "postNewTask2": {
+      "accepts": [
+        {
+          "arg": "id",
+          "type": "number",
+          "required": true
+        },
+        {
+          "arg": "title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "arg": "isDone",
+          "type": "boolean",
+          "required": true
+        }
+      ],
+      "returns": [
+        {
+          "arg": "status",
+          "type": "object",
+          "root": true
+        }
+      ],
+      "description": "put new task to todo db",
+      "http": [
+        {
+          "path": "/postNewTask2",
+          "verb": "put"
+        }
+      ]
+    }
+  }
 }
